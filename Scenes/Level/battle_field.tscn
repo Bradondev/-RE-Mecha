@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=4 uid="uid://6vv64ireda20"]
+
+[ext_resource type="Script" path="res://Code/Battle/fields.gd" id="1_jogmu"]
+[ext_resource type="PackedScene" uid="uid://lprkuhpd32uh" path="res://Scenes/Level/field.tscn" id="2_itues"]
+
+[node name="BattleField" type="Node2D"]
+
+[node name="fields" type="Node2D" parent="."]
+script = ExtResource("1_jogmu")
+
+[node name="BattleField" parent="fields" node_paths=PackedStringArray("fields") instance=ExtResource("2_itues")]
+visible = false
+fields = NodePath("..")
+
+[node name="BattleField2" parent="fields" node_paths=PackedStringArray("fields") instance=ExtResource("2_itues")]
+visible = false
+tile_map_data = PackedByteArray("AAAMAB8AAAAIAAUAAAANAB0AAAAIAAUAAAANAB4AAAAIAAUAAAANAB8AAAAIAAUAAAANACAAAAAIAAUAAAANACEAAAAIAAUAAAAOAB4AAAAIAAUAAAAOAB8AAAAIAAUAAAAOACAAAAAIAAUAAAAOABsAAAAIAAUAAAAOABwAAAAIAAUAAAAOAB0AAAAIAAUAAAAOACEAAAAIAAUAAAAOACIAAAAIAAUAAAAOACMAAAAIAAUAAAAPABwAAAAIAAUAAAAPAB0AAAAIAAUAAAAPAB4AAAAIAAUAAAAPAB8AAAAIAAUAAAAPACAAAAAIAAUAAAAPACEAAAAIAAUAAAAPACIAAAAIAAUAAAAQAB4AAAAIAAUAAAAQAB8AAAAIAAUAAAAQACAAAAAIAAUAAAA=")
+fields = NodePath("..")
+
+[node name="BattleManager" type="Node2D" parent="."]

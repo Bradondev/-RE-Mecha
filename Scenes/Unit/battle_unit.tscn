@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb22rqel4xont"]
+
+[ext_resource type="Script" path="res://Code/Unit/battle_unit.gd" id="1_e0s53"]
+[ext_resource type="Script" path="res://Code/Unit/state_mechine.gd" id="2_0avs8"]
+[ext_resource type="Script" path="res://Code/Unit/UnitAttackState.gd" id="3_3bwpr"]
+[ext_resource type="Script" path="res://Code/Unit/UnitMoveState.gd" id="4_hh2q7"]
+
+[node name="BattleUnit" type="Node2D"]
+script = ExtResource("1_e0s53")
+
+[node name="UnitSprite" type="AnimatedSprite2D" parent="."]
+
+[node name="StateMechine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_0avs8")
+initial_state = NodePath("UnitMoveState")
+
+[node name="UnitAttackState" type="Node" parent="StateMechine"]
+script = ExtResource("3_3bwpr")
+
+[node name="UnitMoveState" type="Node" parent="StateMechine" node_paths=PackedStringArray("state_machine")]
+script = ExtResource("4_hh2q7")
+state_machine = NodePath("..")
