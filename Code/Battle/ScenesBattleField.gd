@@ -3,7 +3,7 @@ class_name  BattleField
 
 
 
-@export var fields: FieldManager 
+@export var fields: Node2D
 
 var layerTile:TileMapLayer
 

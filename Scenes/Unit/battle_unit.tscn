@@ -1,14 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb22rqel4xont"]
+[gd_scene load_steps=8 format=3 uid="uid://bb22rqel4xont"]
 
 [ext_resource type="Script" path="res://Code/Unit/battle_unit.gd" id="1_e0s53"]
 [ext_resource type="Script" path="res://Code/Unit/state_mechine.gd" id="2_0avs8"]
+[ext_resource type="Texture2D" uid="uid://d1eolrwawwp0v" path="res://Assests/TempBox.png" id="2_5p4vj"]
 [ext_resource type="Script" path="res://Code/Unit/UnitAttackState.gd" id="3_3bwpr"]
 [ext_resource type="Script" path="res://Code/Unit/UnitMoveState.gd" id="4_hh2q7"]
+[ext_resource type="Script" path="res://Code/Unit/unit_idle_state.gd" id="6_6r138"]
 
-[node name="BattleUnit" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_iet0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5p4vj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BattleUnit" type="Node2D" node_paths=PackedStringArray("core", "head", "weapon", "bottom", "state_mechine", "unit_attack_state", "unit_move_state")]
 script = ExtResource("1_e0s53")
+core = NodePath("Core")
+head = NodePath("Head")
+weapon = NodePath("Weapons")
+bottom = NodePath("Bottom")
+state_mechine = NodePath("StateMechine")
+unit_attack_state = NodePath("StateMechine/UnitAttackState")
+unit_move_state = NodePath("StateMechine/UnitMoveState")
 
-[node name="UnitSprite" type="AnimatedSprite2D" parent="."]
+[node name="Core" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-9, 4)
+sprite_frames = SubResource("SpriteFrames_iet0e")
+offset = Vector2(9, -5)
+
+[node name="Head" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-1, 8)
+sprite_frames = SubResource("SpriteFrames_iet0e")
+offset = Vector2(9, -5)
+
+[node name="Bottom" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-17, 8)
+sprite_frames = SubResource("SpriteFrames_iet0e")
+offset = Vector2(9, -5)
+
+[node name="Weapons" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-9, 12)
+sprite_frames = SubResource("SpriteFrames_iet0e")
+offset = Vector2(9, -5)
 
 [node name="StateMechine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_0avs8")
@@ -20,3 +69,6 @@ script = ExtResource("3_3bwpr")
 [node name="UnitMoveState" type="Node" parent="StateMechine" node_paths=PackedStringArray("state_machine")]
 script = ExtResource("4_hh2q7")
 state_machine = NodePath("..")
+
+[node name="UnitIdleState" type="Node" parent="StateMechine"]
+script = ExtResource("6_6r138")

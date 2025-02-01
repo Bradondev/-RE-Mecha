@@ -1,6 +1,5 @@
 extends UnitState
-class_name UnitAttackState
-
+class_name UnitIdleState
 
 
 func Enter():
