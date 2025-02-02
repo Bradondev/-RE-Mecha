@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://lprkuhpd32uh"]
 
 [ext_resource type="Texture2D" uid="uid://cheimf2oon3np" path="res://Assests/tallGrass.png" id="1_4rt3k"]
-[ext_resource type="Script" path="res://Code/Battle/ScenesBattleField.gd" id="2_b6g76"]
+[ext_resource type="Script" path="res://Code/Battle_Code/ScenesBattleField.gd" id="2_b6g76"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7kncd"]
 texture = ExtResource("1_4rt3k")

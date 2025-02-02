@@ -42,7 +42,7 @@ func  SpawnInCell(coords: Vector2i, source_id: int = -1, atlas_coords: Vector2i 
 	NewSprite.y_sort_enabled = true
 	fields.add_child(NewSprite)
 	NewSprite.texture = tiletexture
-	newTween.tween_property(NewSprite,"global_position",map_to_local(coords), .2 )
+	newTween.tween_property(NewSprite,"global_position",map_to_local(coords), .05 )
 	
 	await  newTween.finished
 	layerTile.set_cell(coords,0 ,tileAtlasData,alternative_tile)

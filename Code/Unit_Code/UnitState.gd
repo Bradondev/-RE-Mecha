@@ -1,5 +1,6 @@
 extends Node
 class_name  UnitState
+signal Transitioned
 @export var state_machine:  UnitStateMachine
 @export var tilemap : TileMap
 @export var Owner: Node
