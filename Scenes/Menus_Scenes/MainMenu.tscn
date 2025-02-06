@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://fukwvedutpa2"]
+[gd_scene load_steps=2 format=3 uid="uid://fukwvedutpa2"]
+
+[ext_resource type="FontFile" uid="uid://c2bbq7y8vrjy1" path="res://Style/Fonts/Metalic.otf" id="1_bbx1n"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,6 +15,45 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
 
+[node name="ColorRect" type="ColorRect" parent="Home"]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+color = Color(0.35, 0.35, 0.35, 1)
+
+[node name="Buttons" type="VBoxContainer" parent="Home"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 104.0
+offset_right = 101.0
+offset_bottom = 240.0
+
+[node name="New Game" type="Button" parent="Home/Buttons"]
+layout_mode = 2
+text = "New Game"
+
+[node name="Options" type="Button" parent="Home/Buttons"]
+layout_mode = 2
+text = "Options"
+
+[node name="Credits" type="Button" parent="Home/Buttons"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Home/Buttons"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Title" type="RichTextLabel" parent="Home"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 480.0
+offset_bottom = 91.0
+theme_override_fonts/normal_font = ExtResource("1_bbx1n")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center] R e M e c h a"
+
 [node name="Settings" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 640.0
@@ -20,5 +61,5 @@ offset_bottom = 360.0
 
 [node name="Credit" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_right = 480.0
+offset_bottom = 270.0

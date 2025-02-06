@@ -12,6 +12,7 @@ config_version=5
 
 config/name="RE-Mecha"
 config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://Assests/Mechs/MechaIcon.png"
 
 [display]
 
@@ -34,8 +35,13 @@ folder_colors={
 "res://Assests/": "orange",
 "res://Code/": "blue",
 "res://Resources/": "green",
-"res://Scenes/": "red"
+"res://Scenes/": "red",
+"res://Style/": "pink"
 }
+
+[gui]
+
+theme/custom="res://Style/Themes/BaseTheme.tres"
 
 [rendering]
 
